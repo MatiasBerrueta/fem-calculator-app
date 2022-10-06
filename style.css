@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+*, *::before, *::after {
+  font-family: 'League Spartan';
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 32px;
+  --Transition-time: 150ms;
+}
+
+.theme-1 {
+  --Main-background: hsl(222, 26%, 31%);
+  --Keypad-background: hsl(223, 31%, 20%);
+  --Screen-background: hsl(224, 36%, 15%);
+  --Main-key-background: hsl(30, 25%, 89%);
+  --Main-key-shadow: hsl(28, 16%, 65%);
+  --Main-key-hover: white;
+  --Special-key-background: hsl(225, 21%, 49%);
+  --Special-key-shadow: hsl(224, 28%, 35%);
+  --Special-key-hover: hsl(224, 51%, 76%);
+  --Equals-key-background: hsl(6, 63%, 50%);
+  --Equals-key-shadow: hsl(6, 70%, 34%);
+  --Equals-key-hover: hsl(6, 93%, 67%);
+  --Key-color: hsl(221, 14%, 31%);
+  --Text-color: white;
+}
+
+.theme-2 {
+  --Main-background: hsl(0, 0%, 90%);
+  --Keypad-background: hsl(0, 5%, 81%);
+  --Screen-background: hsl(0, 0%, 93%);
+  --Main-key-background: hsl(45, 7%, 89%);
+  --Main-key-shadow: hsl(35, 11%, 61%);
+  --Main-key-hover: white;
+  --Special-key-background: hsl(185, 42%, 37%);
+  --Special-key-shadow: hsl(185, 58%, 25%);
+  --Special-key-hover: hsl(185, 41%, 56%);
+  --Equals-key-background: hsl(25, 98%, 40%);
+  --Equals-key-shadow: hsl(25, 99%, 27%);
+  --Equals-key-hover: hsl(25, 100%, 61%);
+  --Key-color: hsl(60, 10%, 19%);
+  --Text-color: hsl(60, 10%, 19%);
+}
+
+.theme-3 {
+  --Main-background: hsl(268, 75%, 9%);
+  --Keypad-background: hsl(268, 71%, 12%);
+  --Screen-background: hsl(268, 71%, 12%);
+  --Main-key-background: hsl(268, 47%, 21%);
+  --Main-key-shadow: hsl(290, 70%, 36%);
+  --Main-key-hover: hsl(268, 54%, 44%);
+  --Special-key-background: hsl(281, 89%, 26%);
+  --Special-key-shadow: hsl(285, 91%, 52%);
+  --Special-key-hover: hsl(281, 55%, 44%);
+  --Equals-key-background: hsl(176, 100%, 44%);
+  --Equals-key-shadow: hsl(177, 92%, 70%);
+  --Equals-key-hover: hsl(177, 100%, 79%);
+  --Key-color: hsl(52, 100%, 62%);
+  --Text-color: hsl(52, 100%, 62%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: var(--Main-background);
+  padding: 0.75rem;
+  width: 100vw;
+  height: 100vh;
+  transition: var(--Transition-time);
+}
+
+main {
+  max-width: 550px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.5rem;
+  color: var(--Text-color);
+}
+
+.header > h1 {
+  align-self: end;
+}
+
+.theme-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.4rem;
+  padding: 0.1rem 0.75rem;
+  line-height: 0.4rem;
+}
+
+.theme-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.theme-numbers {
+  padding: 0 0.15rem;
+  font-size: 0.4rem;
+  display: flex;
+  justify-content: space-around;
+  column-gap: 0.25rem;
+  width: 100%;
+}
+
+.theme-buttons {
+  position: relative;
+  background-color: var(--Keypad-background);
+  column-gap: 0.25rem;
+  padding: 0.15rem;
+  border-radius: 99px;
+  display: flex;
+  width: calc(0.8rem * 3 + 0.1rem);
+  height: 0.8rem;
+  justify-content: space-between;
+}
+
+.theme-buttons input {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.theme-buttons input:hover ~ .custom-theme-option-button{
+  background-color: var(--Equals-key-hover);
+}
+
+.custom-theme-option-button {
+  position: absolute;
+  display: block;
+  border: none;
+  background-color: var(--Equals-key-background);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  user-select: none;
+  pointer-events: none;
+  transition: left 350ms cubic-bezier(.65,.05,.36,1), transform 350ms cubic-bezier(.65,.05,.36,1);
+}
+
+.theme-buttons input[id="theme-1"]:checked ~ button{
+  left: 0.15rem;
+}
+
+.theme-buttons input[id="theme-2"]:checked ~ button{
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.theme-buttons input[id="theme-3"]:checked ~ button{
+  left: calc(100% - 0.65rem);
+}
+
+.display {
+  text-align: right;
+  background-color: var(--Screen-background);
+  color: var(--Text-color);
+  padding: 0.5rem;
+  font-size: 2rem;
+  border-radius: 7px;
+  margin: 0.75rem 0;
+  transition: var(--Transition-time);
+}
+
+.display-content {
+  display: block;
+  overflow: hidden;
+  direction: ltr;
+}
+
+.key-pad {
+  --key-gap: clamp(0.4rem, 2vw, 0.75rem);
+  display: grid;
+  flex-direction: column;
+  padding: 0.75rem;
+  border-radius: 7px;
+  height: 50vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  column-gap: var(--key-gap);
+  row-gap: calc(var(--key-gap) + 4px);
+  background: var(--Keypad-background);
+  transition: var(--Transition-time);
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.key {
+  text-align: center;
+  background-color: var(--Main-key-background);
+  color: var(--Key-color);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 3px 0 0 var(--Main-key-shadow);
+  /* transition: var(--Transition-time); */
+}
+
+.key span {
+  display: block;
+  height: 1rem;
+  font-size: inherit;
+  pointer-events: none;
+}
+
+.key:hover {
+  --Main-key-background: var(--Main-key-hover);
+}
+
+.reset-key,
+.delete-key {
+  --Main-key-shadow: var(--Special-key-shadow);
+  --Main-key-background: var(--Special-key-background);
+  text-transform: uppercase;
+}
+
+.reset-key:hover,
+.delete-key:hover {
+  --Main-key-background: var(--Special-key-hover);
+}
+
+.reset-key {
+  grid-column: 1 / span 2;
+}
+
+.equals-key {
+  --Main-key-shadow: var(--Equals-key-shadow);
+  --Main-key-background: var(--Equals-key-background);
+  grid-column: 3 / span 2;
+}
+
+.equals-key:hover {
+  --Main-key-background: var(--Equals-key-hover);
+}
+
+.reset-key,
+.equals-key,
+.delete-key {
+  color: white;
+}

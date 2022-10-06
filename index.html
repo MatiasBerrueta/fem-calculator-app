@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css">
+    <script src="/main.js" defer></script>
+    <title>Calculator app</title>
+  </head>
+  <body class="theme-1">
+    <main>
+      <section class="header">
+        <h1>calc</h1>
+        <div class="theme-container">
+        <span class="theme-title">theme</span>
+          <div class="theme-selector">
+            <div class="theme-numbers">
+              <span>1</span>
+              <span>2</span>
+              <span>3</span>
+            </div>
+            <div class="theme-buttons" data-theme-buttons>
+              <input type="radio" name="themes" id="theme-1" checked>
+              <input type="radio" name="themes" id="theme-2">
+              <input type="radio" name="themes" id="theme-3">
+              <button class="custom-theme-option-button" name="theme-selector"></button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="display">
+        <span class="display-content" data-display-content>0</span>
+      </section>
+      <section class="key-pad" data-key-pad>
+          <button class="key" value="7"><span>7</span></button>
+          <button class="key" value="8"><span>8</span></button>
+          <button class="key" value="9"><span>9</span></button>
+          <button class="key delete-key" value="del"><span>del</span></button>
+          <button class="key" value="4"><span>4</span></button>
+          <button class="key" value="5"><span>5</span></button>
+          <button class="key" value="6"><span>6</span></button>
+          <button class="key" value="+"><span>+</span></button>
+          <button class="key" value="1"><span>1</span></button>
+          <button class="key" value="2"><span>2</span></button>
+          <button class="key" value="3"><span>3</span></button>
+          <button class="key" value="-"><span>-</span></button>
+          <button class="key" value="."><span>.</span></button>
+          <button class="key" value="0"><span>0</span></button>
+          <button class="key" value="/"><span>/</span></button>
+          <button class="key" value="x"><span>x</span></button>
+          <button class="key reset-key" value="reset"><span>reset</span></button>
+          <button class="key equals-key" value="="><span>=</span></button>
+      </section>
+    </main>
+  </body>
+</html>
