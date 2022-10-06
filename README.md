@@ -2,6 +2,4 @@
 
 This is a solution to the [Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-(Screenshot.png)
-
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
