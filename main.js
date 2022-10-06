@@ -11,7 +11,7 @@ themeButtons.forEach(button => {
     })
 })
 
-const operators = ['+', '-', '/', 'x', '.']
+const operators = ['+', '-', '/', 'x']
 let firstNumber = ''
 let secondNumber = ''
 let firstOperator = ''
@@ -114,12 +114,3 @@ keyPad.addEventListener('click', (event) => {
     const pressedKey = event.target.value
     handlePressedKey(pressedKey)
 })
-
-// keyPad.forEach(key => {
-//     key.addEventListener('click', event => {
-//         if(event.target.classList == 'key-pad') return
-//         const pressedKey = event.target.textContent
-//     handlePressedKey(pressedKey)
-        
-//     })
-// })
