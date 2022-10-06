@@ -40,10 +40,10 @@ function clearDisplay() {
 }
 
 function calculate(firstNumber, secondNumber, operator) {
-    if(operator == '+') return (parseInt(firstNumber) + parseInt(secondNumber)).toString()
-    if(operator == '-') return (parseInt(firstNumber) - parseInt(secondNumber)).toString()
-    if(operator == '/') return (parseInt(firstNumber) / parseInt(secondNumber)).toString()
-    if(operator == 'x') return (parseInt(firstNumber) * parseInt(secondNumber)).toString()
+    if(operator == '+') return (parseFloat(firstNumber) + parseFloat(secondNumber)).toString()
+    if(operator == '-') return (parseFloat(firstNumber) - parseFloat(secondNumber)).toString()
+    if(operator == '/') return (parseFloat(firstNumber) / parseFloat(secondNumber)).toString()
+    if(operator == 'x') return (parseFloat(firstNumber) * parseFloat(secondNumber)).toString()
 }
 
 function showResult() {
